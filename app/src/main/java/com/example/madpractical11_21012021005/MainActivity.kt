@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ListView
-import com.example.madpract10_210120210005.ContactDetails
 import org.json.JSONArray
 import java.net.URL
 class MainActivity : AppCompatActivity() {
@@ -31,14 +29,7 @@ class MainActivity : AppCompatActivity() {
             val lat:String= arr[position].lat.toString()
             val log:String= arr[position].long.toString()
 
-            val intent = Intent(this, ContactDetails::class.java)
-            intent.putExtra("_id",id)
-            intent.putExtra("name", name)
-            intent.putExtra("num", num)
-            intent.putExtra("addr", addr)
-            intent.putExtra("lat",lat)
-            intent.putExtra("log",log)
-            startActivity(intent)
+
 
         }
         contacts().execute()
